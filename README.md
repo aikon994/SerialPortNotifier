@@ -34,17 +34,15 @@ If SerialPortNotifier is useful to you, you can support its development through 
 
 ### One-time support
 
-- [☕ €3 — Coffee](https://donate.stripe.com/test_cNidR2fmu5KwgxW6uE1RC00)
-- [🚀 €5 — Supporter](https://donate.stripe.com/test_3cI9AMcai2ykbdCaKU1RC01)
-- [💙 €10 — Big Support](https://donate.stripe.com/test_aFa6oAa2ac8U95u3is1RC02)
+- [☕ €3 — Coffee](https://donate.stripe.com/4gM3co3Ec77rdRLgMJ83C00)
+- [🚀 €5 — Supporter](https://donate.stripe.com/00w7sE3Ec2Rb6pjbsp83C01)
+- [💙 €10 — Big Support](https://donate.stripe.com/14A00cb6E8bvfZTaol83C02)
 
 ### Monthly support
 
-- [⭐ €2/month](https://buy.stripe.com/test_bJe3co0rA0qc5Ti3is1RC03)
-- [⭐ €5/month](https://buy.stripe.com/test_aFaeV62zI5KwdlK3is1RC04)
-- [⭐ €10/month](https://buy.stripe.com/test_cNicMY2zI6OAepOf1a1RC05)
-
-> These links currently use **Stripe sandbox/test mode**. No real money is charged.
+- [⭐ €2/month](https://buy.stripe.com/9B6aEQa2A9fz3d72VT83C03)
+- [⭐ €5/month](https://buy.stripe.com/6oU28kdeMfDX7tnaol83C04)
+- [⭐ €10/month](https://buy.stripe.com/5kQ8wI4Ig3Vf6pjeEB83C05)
 
 Payments are securely processed by Stripe.
 
