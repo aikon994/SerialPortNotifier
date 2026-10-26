@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=SerialPortNotifier
+Comment=Notify when USB serial devices are connected or disconnected
+Exec=serial-port-notifier
+Terminal=false
+Categories=Utility;
