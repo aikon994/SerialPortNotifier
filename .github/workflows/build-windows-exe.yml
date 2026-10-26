@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -44,10 +44,26 @@ jobs:
           Copy-Item LICENSE release/LICENSE.txt
           Copy-Item windows/README.md release/README-Windows.md
 
-      - name: Upload Windows EXE
+      - name: Upload Windows EXE artifact
         uses: actions/upload-artifact@v4
         with:
           name: SerialPortNotifier-Windows
           path: release/
           if-no-files-found: error
           retention-days: 90
+
+      - name: Create GitHub Release v1.0.0
+        if: github.event_name == 'workflow_dispatch'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "v1.0.0"
+          gh release view $tag 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag release/SerialPortNotifier.exe --clobber
+            gh release upload $tag release/LICENSE.txt --clobber
+            gh release upload $tag release/README-Windows.md --clobber
+          } else {
+            gh release create $tag release/SerialPortNotifier.exe release/LICENSE.txt release/README-Windows.md --target main --title "SerialPortNotifier v1.0.0" --notes "First public release of SerialPortNotifier. Includes the ready-to-run Windows 11 executable, USB serial/COM connect-disconnect notifications, VID/PID detection and Windows automatic startup support."
+          }
