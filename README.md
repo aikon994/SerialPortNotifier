@@ -1,36 +1,85 @@
-# SerialPortNotifier
+<p align="center">
+  <img src="assets/logo.svg" alt="SerialPortNotifier logo" width="150">
+</p>
 
-SerialPortNotifier is a lightweight utility that shows a desktop notification when a USB serial/COM device is connected or disconnected.
+<h1 align="center">SerialPortNotifier</h1>
 
-The project includes native-ready versions for **Windows 11** and **Linux desktop systems**.
+<p align="center">
+  Lightweight USB serial / COM port connection notifier for Windows 11 and Linux.
+</p>
 
-## Platforms
+<p align="center">
+  <img src="https://img.shields.io/github/v/release/aikon994/SerialPortNotifier" alt="Latest release">
+  <img src="https://img.shields.io/github/license/aikon994/SerialPortNotifier" alt="License">
+  <img src="https://img.shields.io/badge/Windows-11-0078D4" alt="Windows 11">
+  <img src="https://img.shields.io/badge/Linux-supported-FCC624" alt="Linux">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB" alt="Python">
+</p>
 
-### Windows 11
+<p align="center">
+  <a href="https://github.com/aikon994/SerialPortNotifier/releases/download/v1.0.0/SerialPortNotifier.exe"><strong>⬇ Download SerialPortNotifier.exe</strong></a>
+  &nbsp;•&nbsp;
+  <a href="https://github.com/aikon994/SerialPortNotifier/releases/latest">Latest release</a>
+</p>
 
-The Windows version monitors COM ports and shows a custom popup with:
+---
 
-- COM port number
-- device description
-- manufacturer
-- VID/PID
-- USB serial number when available
-- connection and disconnection events
-- automatic startup through the current-user Windows registry
+SerialPortNotifier runs quietly in the background and shows a popup whenever a USB serial device is connected or disconnected.
 
-See [`windows/README.md`](windows/README.md).
+Typical devices include **FTDI**, **CH340**, **CP210x**, **Prolific**, Arduino boards and other serial adapters.
 
-### Linux
+## ✨ Features
 
-The Linux version monitors serial devices such as `/dev/ttyUSB0` and `/dev/ttyACM0` and shows notifications through `notify-send`, with a Tk popup fallback.
+- Detects newly connected serial/COM ports
+- Detects disconnected serial/COM ports
+- Shows device name and assigned port
+- Displays manufacturer, VID/PID and USB serial number when available
+- Lightweight background operation
+- Windows automatic startup support
+- Linux desktop notifications with popup fallback
+- Open source and MIT licensed
 
-It supports automatic startup using a `.desktop` file in `~/.config/autostart`.
+## 🪟 Windows 11
 
-See [`linux/README.md`](linux/README.md).
+The Windows version monitors COM ports and displays a custom popup in the bottom-right corner.
+
+### Quick start
+
+Download the ready-to-run executable:
+
+**[⬇ Download SerialPortNotifier.exe](https://github.com/aikon994/SerialPortNotifier/releases/download/v1.0.0/SerialPortNotifier.exe)**
+
+Run it and you should immediately see a startup notification. After that, connect or disconnect a USB serial adapter.
+
+Example:
+
+```text
+USB serial connected
+
+Port: COM7
+USB-SERIAL CH340
+Manufacturer: wch.cn
+VID:PID 1A86:7523
+```
+
+For source builds and Windows autostart instructions, see [`windows/README.md`](windows/README.md).
+
+## 🐧 Linux
+
+The Linux version monitors devices such as:
+
+```text
+/dev/ttyUSB0
+/dev/ttyACM0
+```
+
+It uses native desktop notifications through `notify-send` when available, with a Tk popup fallback.
+
+For installation and autostart instructions, see [`linux/README.md`](linux/README.md).
 
 ## ❤️ Support this project
 
-If SerialPortNotifier is useful to you, you can support its development through Stripe.
+If SerialPortNotifier is useful to you, you can support continued development through Stripe.
 
 ### One-time support
 
@@ -46,10 +95,12 @@ If SerialPortNotifier is useful to you, you can support its development through 
 
 Payments are securely processed by Stripe.
 
-## Repository structure
+## 📁 Repository structure
 
 ```text
 SerialPortNotifier/
+├── assets/
+│   └── logo.svg
 ├── windows/
 │   ├── src/serial_port_notifier.py
 │   ├── build_exe.bat
@@ -69,6 +120,29 @@ SerialPortNotifier/
 └── .gitignore
 ```
 
-## License
+## 🛠 Build from source
 
-MIT License.
+### Windows
+
+```powershell
+cd windows
+build_exe.bat
+```
+
+### Linux
+
+```bash
+cd linux
+chmod +x run.sh
+./run.sh
+```
+
+## 📦 Releases
+
+The Windows executable is built automatically through GitHub Actions.
+
+**Current release:** [v1.0.0](https://github.com/aikon994/SerialPortNotifier/releases/tag/v1.0.0)
+
+## 📄 License
+
+SerialPortNotifier is released under the **MIT License**.
